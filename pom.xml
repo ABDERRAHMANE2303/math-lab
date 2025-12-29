@@ -38,6 +38,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId>
 		</dependency>
+		<dependency>
+			<!-- Fix: enable Jakarta Bean Validation (@Valid, @NotNull, etc.) for request validation -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
