@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Lab</title>
+
+    <!-- Link to our static CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Math Lab </h1>
+
+    <form id="calculator-form">
+        <input type="number" id="a" placeholder="First number" required>
+
+        <select id="operation">
+            <option value="ADD">Add (+)</option>
+            <option value="SUBTRACT">Subtract (-)</option>
+            <option value="MULTIPLY">Multiply (×)</option>
+            <option value="DIVIDE">Divide (÷)</option>
+            <option value="POWER">Power (^)</option>
+            <option value="MODULO">Modulo (%)</option>
+        </select>
+
+        <input type="number" id="b" placeholder="Second number" required>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div id="result">
+        <!-- Result will be shown here -->
+    </div>
+</div>
+
+</body>
+</html>
