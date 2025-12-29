@@ -5,7 +5,11 @@ import org.springframework.stereotype.Service;
 import com.math_lab.dto.Operation;
 import com.math_lab.dto.RequestCalculation;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@Data
 @Service
 public class CalculatorService {
     

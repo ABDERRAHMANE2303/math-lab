@@ -1,10 +1,12 @@
 package com.math_lab.dto;
 
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 public class RequestCalculation {
     // Fix: use wrapper types + @NotNull so missing JSON fields are caught by validation (instead of defaulting to 0.0)
