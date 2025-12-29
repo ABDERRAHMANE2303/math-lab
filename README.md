@@ -1,12 +1,12 @@
 # 🧮 Math Lab: Spring Boot Reference App
 
-A basic deterministic, database-less REST API designed to be tested in automated secure ci cds , for  the first iteration of a ci cd engine project . 
-
+A minimal, deterministic, database-less REST API built specifically to serve as a test target for automated secure CI/CD pipelines.
+This project is intentionally simple and predictable, and is used as a reference application in the first iteration of a CI/CD engine focused on build, test, and security automation.
 ---
 
 ### 🎯 Core Objectives
-* **Demonstration:** Showcase Spring Boot application built with maven .
-* **Testing Ground:** Provide a stable target for smoke tests and CI/CD pipelines .
+* **Demonstration:** Showcase Spring Boot controllers, services, and configuration.
+* **Testing Ground:** Provide a stable target for smoke tests and CI/CD pipelines.
 * **Simplicity:** No DB, no security, and no orchestration—purely functional logic.
 
 ---
@@ -50,4 +50,3 @@ Supported Operations: ADD | SUBTRACT | MULTIPLY | DIVIDE | POWER | MODULO
 | ---------- | ---------------------- | ----------------------------------------------------- |
 | Unit Tests | `CalculatorService`    | Fast; no Spring context; tests pure business logic    |
 | Web Tests  | `CalculatorController` | Validates API contracts, JSON mapping, and HTTP codes |
-
