@@ -33,6 +33,39 @@
         <!-- Result will be shown here -->
     </div>
 </div>
+<script>
+const form = document.getElementById('calculator-form');
+const resultDiv = document.getElementById('result');
 
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const firstNumber = parseFloat(document.getElementById('a').value);
+    const secondNumber = parseFloat(document.getElementById('b').value);
+    const operation = document.getElementById('operation').value;
+
+    const requestBody = { firstNumber, secondNumber, operation };
+
+    try {
+        const response = await fetch('/api/calculate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(requestBody)
+        });
+
+        const data = await response.json(); // parse JSON even if response.ok is false
+
+        if (!response.ok) {
+            // Show the error message from backend
+            resultDiv.textContent = `Error: ${data.message || data.error}`;
+            return;
+        }
+
+        resultDiv.textContent = `Result: ${data.result}`;
+    } catch (err) {
+        resultDiv.textContent = `Error: ${err.message}`;
+    }
+});
+</script>
 </body>
 </html>

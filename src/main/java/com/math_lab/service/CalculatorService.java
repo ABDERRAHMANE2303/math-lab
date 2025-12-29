@@ -15,11 +15,9 @@ public class CalculatorService {
     
     public double calculate(RequestCalculation requestCalculation){
 
-        // Fix: avoid repeated getters + keep names meaningful
         double denominator = requestCalculation.getSecondNumber();
         Operation op = requestCalculation.getOperation();
 
-        // Fix: fail fast with a clear message instead of NullPointerException in switch(op)
         if (op == null) {
             throw new IllegalArgumentException("Operation must be provided");
         }

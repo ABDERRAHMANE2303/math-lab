@@ -17,7 +17,6 @@ public class ApiExceptionHandler {
 
 	@ExceptionHandler(IllegalArgumentException.class)
 	public ResponseEntity<Map<String, Object>> handleIllegalArgument(IllegalArgumentException ex) {
-		// Fix: return a proper 400 Bad Request instead of an unhandled exception (500)
 		Map<String, Object> body = new HashMap<>();
 		body.put("error", "bad_request");
 		body.put("message", ex.getMessage());
@@ -26,7 +25,6 @@ public class ApiExceptionHandler {
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<Map<String, Object>> handleValidation(MethodArgumentNotValidException ex) {
-		// Fix: return a consistent 400 payload when @Valid fails
 		Map<String, String> fieldErrors = new HashMap<>();
 		ex.getBindingResult().getFieldErrors()
 				.forEach(err -> fieldErrors.put(err.getField(), err.getDefaultMessage()));

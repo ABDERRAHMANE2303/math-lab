@@ -17,7 +17,6 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api")
 public class CalculatorController {
 
-    // Fix: constructor injection via Lombok (@RequiredArgsConstructor) + immutable dependency
     private final CalculatorService calculatorService;
 
     @PostMapping("/calculate")
