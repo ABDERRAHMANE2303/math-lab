@@ -2,6 +2,9 @@ package com.math_lab.service;
 
 import org.springframework.stereotype.Service;
 
+import java.sql.Connection;
+import java.sql.Statement;
+
 import com.math_lab.dto.Operation;
 import com.math_lab.dto.RequestCalculation;
 
@@ -12,6 +15,20 @@ import lombok.NoArgsConstructor;
 @Data
 @Service
 public class CalculatorService {
+    //fake secrets to test sast tools 
+    public static final String API_KEY = "AKIAIOSFODNN7EXAMPLE"; 
+    public static final String PASSWORD = "SuperSecret123!";
+
+    public void sqlInjection(String userInput, Connection conn) throws Exception {
+        // Semgrep should flag this as a SQL injection
+        Statement stmt = conn.createStatement();
+        stmt.executeQuery("SELECT * FROM users WHERE username = '" + userInput + "'");
+    }
+
+    public void commandInjection(String cmd) throws Exception {
+        // Semgrep should flag Runtime.exec usage
+        Runtime.getRuntime().exec(cmd);
+    }
     
     public double calculate(RequestCalculation requestCalculation){
 
